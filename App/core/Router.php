@@ -12,6 +12,12 @@ class Router
     protected $currentMethod = 'index';
     protected $params = [];
 
+    /**
+     * Router constructor.
+     *
+     *Calls for a passed controller method or
+     * default controller
+     */
     public function __construct(){
 
         $url = $this->getURL();
@@ -36,6 +42,11 @@ class Router
         call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
     }
 
+    /**
+     *
+     * Splits url into variables that will be passed as controller class, method and params
+     * @return array|mixed|string
+     */
     public function getURL(){
         if(isset($_GET['url'])) {
             $url = rtrim($_GET['url'],'/');

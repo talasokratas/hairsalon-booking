@@ -9,6 +9,9 @@
 class Home extends Controller
 {
 
+    /**
+     *loads default view
+     */
     public function index() {
         $this->view('index');
     }
