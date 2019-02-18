@@ -10,7 +10,7 @@ class Home extends Controller
 {
 
     public function index() {
-        echo 'hello';
+        $this->view('index');
     }
 
 }
