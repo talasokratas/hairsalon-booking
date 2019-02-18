@@ -11,3 +11,5 @@ require_once '../App/config/config.php';
 spl_autoload_register(function($className){
     require_once '../App/core/' . $className .'.php';
 });
+
+$routeHandler = new Router;
