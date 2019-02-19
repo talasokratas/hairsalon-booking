@@ -12,6 +12,7 @@ class Reservations extends Controller
     public function __construct()
     {
         $this->reservation = $this->model('Reservation');
+        $this->barber = $this->model('Barber');
     }
     /**
      *loads index view with passed values

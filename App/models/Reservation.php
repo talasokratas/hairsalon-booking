@@ -61,5 +61,34 @@ class Reservation
         }
     }
 
+    public function schedule($date){
+
+        $reservedTimes = [];
+
+        $begin = new DateTime($date . ' 9:00');
+        $end = new DateTime($date . ' 20:00');
+
+        $interval = DateInterval::createFromDateString('15 minute');
+        $period = new DatePeriod($begin, $interval, $end);
+
+        foreach ($period as $dt) {
+
+            $this->db->query('SELECT barber_id as id FROM reservations WHERE completed = 0 AND date = :dt');
+            $this->db->bind(':dt', $dt->format("Y-m-d H:i"));
+            if(!empty($this->db->resultSet())){
+                $reservedTimes[$dt->format("H:i")] = [];
+                $barbers = $this->db->resultSet();
+                foreach ($barbers as $barber){
+                    array_push($reservedTimes[$dt->format("H:i")], $barber->id) ;
+                }
+            } else {
+                $reservedTimes[$dt->format("H:i")] = [];
+            }
+
+        }
+
+        return $reservedTimes;
+    }
+
 
 }
