@@ -8,12 +8,12 @@ as green button. When client clicks on the button he or she is redirected to con
 For this app to work server where this app will be hosted must have mod_rewrite module enabled, because it is used in .htaccess files.
 
 <h3>After placing this app to server or your developing environment foolow this steps:</h3>
-1. <strong>IMPORTANT.</strong> open .htaccess file located in public folder and change rewrite base 
+1. <strong>IMPORTANT</strong><br> Open .htaccess file located in public folder and change rewrite base 
  RewriteBase /hairsalon-booking-mvc/public
 to your directory. /hairsalon-booking-mvc/ should be replaced by your directory.
-In most hosting cases RewriteBase /public/ should work
-2. Create database for this application
-3. Rename congig-example.php to config.php and save your database crediantials to this file
-4. Add rooturl and sitename to the same configuration file
+In most hosting cases RewriteBase /public/ should work<br>
+2. Create database for this application<br>
+3. Rename congig-example.php to config.php and save your database crediantials to this file<br>
+4. Add rooturl and sitename to the same configuration file<br>
 
 That's it for now. There are quite few things left to work on.
