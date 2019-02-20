@@ -8,6 +8,7 @@
 
 class Barber
 {
+    private $db;
     /**
      * Barber constructor.
      * On creation connects to DB
@@ -16,11 +17,18 @@ class Barber
         $this->db = new Database;
     }
 
+    /**
+     * @return mixed
+     */
     public function getAll(){
         $this->db->query('SELECT * FROM barbers');
         return $this->db->resultSet();
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function getBarberById($id){
         $this->db->query('SELECT * FROM barbers WHERE id = :id');
         $this->db->bind(':id', $id);

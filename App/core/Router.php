@@ -27,7 +27,7 @@ class Router
             unset($url[0]);
         }
 
-        require_once '../App/Controllers/' . $this->currentController . '.php';
+        require_once '../App/controllers/' . $this->currentController . '.php';
 
         $this->currentController = new $this->currentController;
 

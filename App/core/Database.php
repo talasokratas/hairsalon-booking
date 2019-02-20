@@ -92,10 +92,4 @@ class Database
         return $this->stmt->fetch(PDO::FETCH_OBJ);
     }
 
-    /**
-     * @return mixed
-     */
-    public function rowCount() {
-        return $this->stmt->rowCount();
-    }
 }
